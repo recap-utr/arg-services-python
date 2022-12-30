@@ -1,4 +1,12 @@
 const config = {
+  branches: [
+    { name: "main" },
+    { name: "next" },
+    { name: "+([0-9])?(.{+([0-9]),x}).x" },
+    { name: "dev", prerelease: true },
+    { name: "beta", prerelease: true },
+    { name: "alpha", prerelease: true },
+  ],
   plugins: [
     [
       "@semantic-release/commit-analyzer",
