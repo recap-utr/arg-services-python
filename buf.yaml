@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/recap/arg-services-python
+deps:
+  - buf.build/recap/arg-services:v1.0.3

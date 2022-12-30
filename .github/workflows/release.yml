@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - uses: bufbuild/buf-setup-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: arduino/setup-protoc@v1
+        with:
+          version: "3.x"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          pip install pipx
+          pipx install mypy-protobuf==3.4.0
+          pipx install poetry==1.3.1
+      - uses: cihelper/action-semanticrelease-poetry@v3
+        with:
+          pypi-token: ${{ secrets.PYPI_TOKEN }}
+      - uses: cycjimmy/semantic-release-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        with:
+          semantic_version: ^19
+          extra_plugins: |
+            @semantic-release/git@^10
+            @semantic-release/changelog@^6
+            @semantic-release/exec@^6
+            conventional-changelog-conventionalcommits@^5
+            @cihelper/semanticrelease-plugin-poetry@^1
