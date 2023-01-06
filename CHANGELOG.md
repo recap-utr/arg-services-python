@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/recap-utr/arg-services-python/compare/v1.0.3...v1.0.4) (2023-01-06)
+
+
+### Bug Fixes
+
+* run buf mod update before generation ([8ef9ee0](https://github.com/recap-utr/arg-services-python/commit/8ef9ee0d70081270e472a62d84437974cec293c3))
+
 ## [1.0.3](https://github.com/recap-utr/arg-services-python/compare/v1.0.2...v1.0.3) (2023-01-06)
 
 
