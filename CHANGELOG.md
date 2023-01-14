@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.5](https://github.com/recap-utr/arg-services-python/compare/v1.0.4...v1.0.5) (2023-01-14)
+
+
+### Bug Fixes
+
+* add grpc-stubs package ([6835a48](https://github.com/recap-utr/arg-services-python/commit/6835a48f3aa0c0e807ad9defe78e1c4d8e866dc6))
+* pypi package linked to typescript repo ([c22f475](https://github.com/recap-utr/arg-services-python/commit/c22f47574eabab87dc5bf9e11fbfbc28dacf0e07))
+
 ## [1.0.4](https://github.com/recap-utr/arg-services-python/compare/v1.0.3...v1.0.4) (2023-01-06)
 
 
