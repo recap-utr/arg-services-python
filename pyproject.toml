@@ -7,7 +7,10 @@ license = "MIT"
 readme = "README.md"
 homepage = "http://recap.uni-trier.de"
 repository = "https://github.com/recap-utr/arg-services-typescript"
-packages = [{ include = "arg_services" }, { include = "google" }]
+packages = [
+    { include = "arg_services", from = "build" },
+    { include = "google", from = "build" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
