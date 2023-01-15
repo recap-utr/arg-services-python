@@ -7,9 +7,10 @@ license = "MIT"
 readme = "README.md"
 homepage = "http://recap.uni-trier.de"
 repository = "https://github.com/recap-utr/arg-services-python"
+include = ["src/**/*"]
 packages = [
-    { include = "arg_services", from = "build" },
-    { include = "google", from = "build" },
+    { include = "arg_services", from = "src" },
+    { include = "google", from = "src" },
 ]
 
 [tool.poetry.dependencies]

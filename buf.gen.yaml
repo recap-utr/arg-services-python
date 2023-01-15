@@ -4,10 +4,10 @@ managed:
 plugins:
   # Python
   - plugin: buf.build/protocolbuffers/python:v21.12
-    out: ./build
+    out: ./src
   - plugin: buf.build/grpc/python:v1.51.1
-    out: ./build
+    out: ./src
   - name: mypy
-    out: ./build
+    out: ./src
   - name: mypy_grpc
-    out: ./build
+    out: ./src
