@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/recap-utr/arg-services-python/compare/v1.0.7...v1.0.8) (2023-01-15)
+
+
+### Bug Fixes
+
+* init file was copied to wrong folder ([3e9355f](https://github.com/recap-utr/arg-services-python/commit/3e9355fb5f4ff6976a15801cc586bac26fbafa7a))
+
 ## [1.0.7](https://github.com/recap-utr/arg-services-python/compare/v1.0.6...v1.0.7) (2023-01-15)
 
 
