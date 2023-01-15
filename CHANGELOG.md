@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/recap-utr/arg-services-python/compare/v1.0.6...v1.0.7) (2023-01-15)
+
+
+### Bug Fixes
+
+* no files were included in pypi package ([8e122a6](https://github.com/recap-utr/arg-services-python/commit/8e122a69c7fadf24fc4f4f480aa74b68aaefe95d))
+
 ## [1.0.6](https://github.com/recap-utr/arg-services-python/compare/v1.0.5...v1.0.6) (2023-01-15)
 
 
