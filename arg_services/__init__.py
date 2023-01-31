@@ -202,9 +202,6 @@ def serve(
         reflection_services: List of services this server supports.
             Use the provided function `arg_services_helper.full_service_name` to get the correct names.
         threads: Number of workers in the gRPC thread pool.
-
-    Raises:
-        ValueError: If `processes < 1` is given.
     """
 
     urls = [url.strip() for url in address.split(",")]
