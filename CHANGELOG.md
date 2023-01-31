@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/recap-utr/arg-services-python/compare/v1.0.8...v1.0.9) (2023-01-31)
+
+
+### Bug Fixes
+
+* require all arguments for serve_single ([e3d21a5](https://github.com/recap-utr/arg-services-python/commit/e3d21a5128d4bc3525eac3f44d5d1cfd9c3507cf))
+
 ## [1.0.8](https://github.com/recap-utr/arg-services-python/compare/v1.0.7...v1.0.8) (2023-01-15)
 
 
