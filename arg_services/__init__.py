@@ -159,8 +159,8 @@ def _serve_single(
     address: str,
     add_services: t.Callable[[grpc.Server], None],
     threads: int,
-    reflection_services: t.Iterable[str] = tuple(),
-    worker_id: int = 1,
+    reflection_services: t.Iterable[str],
+    worker_id: int,
 ):
     """Helper function to start a server for a single process.
 
@@ -202,23 +202,20 @@ def serve(
         reflection_services: List of services this server supports.
             Use the provided function `arg_services_helper.full_service_name` to get the correct names.
         threads: Number of workers in the gRPC thread pool.
+            If multiple processes are used, each process uses the assigned number of threads.
     """
 
     urls = [url.strip() for url in address.split(",")]
 
     if len(urls) == 1:
-        _serve_single(urls[0], add_services, threads, reflection_services)
+        _serve_single(urls[0], add_services, threads, reflection_services, 1)
     else:
         workers = []
 
-        for url in urls:
+        for worker_id, url in enumerate(urls):
             worker = mp.Process(
                 target=_serve_single,
-                args=(
-                    url,
-                    add_services,
-                    reflection_services,
-                ),
+                args=(url, add_services, threads, reflection_services, worker_id),
             )
             worker.start()
             workers.append(worker)
