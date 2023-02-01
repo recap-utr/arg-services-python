@@ -8,4 +8,4 @@ deps:
   - remote: buf.build
     owner: recap
     repository: arg-services
-    commit: 8d865e00a3894f318f7628ef75132e7c
+    commit: 74becaf3e2a841dd8d626e431e183cd8
