@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/recap-utr/arg-services-python/compare/v1.2.2...v1.2.3) (2023-03-10)
+
+
+### Bug Fixes
+
+* remove protocols from address argument ([510c692](https://github.com/recap-utr/arg-services-python/commit/510c69214f01fd8964fde3cc82881dfa58b93648))
+
 ## [1.2.2](https://github.com/recap-utr/arg-services-python/compare/v1.2.1...v1.2.2) (2023-03-10)
 
 
