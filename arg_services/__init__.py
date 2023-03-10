@@ -208,9 +208,16 @@ def serve(
             If multiple processes are used, each process uses the assigned number of threads.
     """
 
+    # Remove protocols like' ipv4:' or 'ipv6:' from the address
+    if address.count(":") == address.count(",") + 2:
+        protocol_end = address.index(":") + 1
+        address = address[protocol_end:]
+
     urls = [url.strip() for url in address.split(",")]
 
-    if len(urls) == 1:
+    if len(urls) < 1:
+        raise ValueError("No address given.")
+    elif len(urls) == 1:
         _serve_single(urls[0], add_services, threads, reflection_services, 1)
     else:
         workers = []
