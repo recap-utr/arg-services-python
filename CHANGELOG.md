@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/recap-utr/arg-services-python/compare/v1.2.1...v1.2.2) (2023-03-10)
+
+
+### Bug Fixes
+
+* output correct address for multiple processes ([8061a7e](https://github.com/recap-utr/arg-services-python/commit/8061a7e88f12224f39e4de56763bb7d0a904d6bb))
+
 ## [1.2.1](https://github.com/recap-utr/arg-services-python/compare/v1.2.0...v1.2.1) (2023-03-03)
 
 
