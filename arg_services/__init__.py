@@ -147,7 +147,10 @@ def forbid_all(
     if all(attr_result):
         ctx.abort(
             grpc.StatusCode.INVALID_ARGUMENT,
-            f"The message '{parent}' is not allowed to allowed to have the following parameter combination: {attrs}.",
+            (
+                f"The message '{parent}' is not allowed to allowed to have the"
+                f" following parameter combination: {attrs}."
+            ),
         )
 
 
@@ -220,7 +223,8 @@ def serve(
             worker.start()
             workers.append(worker)
 
-        print(f"All workers have started, please connect to '{address}'.")
+        print("Workers are starting, please connect to")
+        print(f"ipv4:{address}")
 
         for worker in workers:
             worker.join()
