@@ -47,6 +47,7 @@ const config = {
           { path: "dist/*.whl", label: "wheel" },
         ],
         failComment: false,
+        successComment: false,
         addReleases: "bottom",
       },
     ],
