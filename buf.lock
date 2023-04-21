@@ -5,7 +5,9 @@ deps:
     owner: googleapis
     repository: googleapis
     commit: 5ae7f88519b04fe1965da0f8a375a088
+    digest: shake256:27d9fcdc0e3eb957449dc3d17e2d24c7ce59c3c483ecf128818183c336dfd28595ecd13771fb3172247775caf7707c4076dd8e70c5ac2cbcac170df35e4d0028
   - remote: buf.build
     owner: recap
     repository: arg-services
-    commit: b6fbc064e7334bdeb6d4a8c472851471
+    commit: 37255ae7ba7047d6b81b2d1b3bfc079f
+    digest: shake256:c73d3db31648f85e14a99e6045dabb1657273e378de6db908a38f82f08fa426168dae283b91467eb1a01af227f40ca4294cb149e43d079256c3e2d08c2e28fed
