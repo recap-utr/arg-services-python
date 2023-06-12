@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/recap-utr/arg-services-python/compare/v1.3.1...v1.3.2) (2023-06-12)
+
+
+### Bug Fixes
+
+* only include google.api in package ([9e018db](https://github.com/recap-utr/arg-services-python/commit/9e018db621a396f478895784358af8c75575716c))
+
 ## [1.3.1](https://github.com/recap-utr/arg-services-python/compare/v1.3.0...v1.3.1) (2023-04-21)
 
 
