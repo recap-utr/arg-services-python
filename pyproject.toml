@@ -10,7 +10,7 @@ repository = "https://github.com/recap-utr/arg-services-python"
 include = ["src/**/*"]
 packages = [
     { include = "arg_services", from = "src" },
-    { include = "google", from = "src" },
+    { include = "google/api", from = "src" },
 ]
 
 [tool.poetry.dependencies]
