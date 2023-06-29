@@ -7,24 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-      - uses: bufbuild/buf-setup-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: arduino/setup-protoc@v1
-        with:
-          version: "3.x"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
-          pip install pipx
-          pipx install mypy-protobuf==3.4.0
-          pipx install poetry==1.4.2
+      - run: nix profile install .#releaseEnv
       - uses: cycjimmy/semantic-release-action@v3
+        id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         with:
           semantic_version: ^19
           extra_plugins: |
@@ -33,3 +20,5 @@ jobs:
             @semantic-release/exec@^6
             conventional-changelog-conventionalcommits@^5
             @cihelper/semanticrelease-plugin-poetry@^1
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        if: ${{ steps.semanticrelease.outputs.new_release_published == 'true' }}
