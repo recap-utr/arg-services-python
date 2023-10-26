@@ -30,7 +30,7 @@ const config = {
       // Buf
       "@semantic-release/exec",
       {
-        prepareCmd: "./generate.sh",
+        prepareCmd: "nix run .#bufGenerate",
       },
     ],
     [

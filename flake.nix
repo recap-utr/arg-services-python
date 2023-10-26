@@ -22,12 +22,23 @@
       }: let
         poetry = pkgs.poetry;
         python = pkgs.python311;
-        packages = with pkgs; [poetry python buf protobuf mypy-protobuf];
+        packages = with pkgs; [poetry python];
       in {
         packages = {
           releaseEnv = pkgs.buildEnv {
             name = "release-env";
             paths = packages;
+          };
+          bufGenerate = pkgs.writeShellApplication {
+            name = "buf-generate";
+            runtimeInputs = with pkgs; [protobuf mypy-protobuf];
+            text = ''
+              ${lib.getExe pkgs.buf} mod update &&
+              ${lib.getExe pkgs.buf} generate --include-imports buf.build/recap/arg-services &&
+              find src -type d -exec touch {}/__init__.py \; &&
+              rm -f src/__init__.py &&
+              cp -rf arg_services/__init__.py src/arg_services/__init__.py
+            '';
           };
         };
         devShells.default = pkgs.mkShell {
