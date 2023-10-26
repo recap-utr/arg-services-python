@@ -31,7 +31,7 @@
           };
           bufGenerate = pkgs.writeShellApplication {
             name = "buf-generate";
-            runtimeInputs = with pkgs; [protobuf mypy-protobuf];
+            runtimeInputs = with pkgs; [mypy-protobuf];
             text = ''
               ${lib.getExe pkgs.buf} mod update &&
               ${lib.getExe pkgs.buf} generate --include-imports buf.build/recap/arg-services &&
