@@ -13,17 +13,17 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@v6
       - uses: DeterminateSystems/magic-nix-cache-action@v2
       - run: nix profile install .#releaseEnv
-      - uses: cycjimmy/semantic-release-action@v3
+      - uses: cycjimmy/semantic-release-action@v4
         id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          semantic_version: ^19
+          semantic_version: ^22
           extra_plugins: |
             @semantic-release/git@^10
             @semantic-release/changelog@^6
             @semantic-release/exec@^6
-            conventional-changelog-conventionalcommits@^5
-            @cihelper/semanticrelease-plugin-poetry@^1
+            conventional-changelog-conventionalcommits@^7
+            @cihelper/semanticrelease-plugin-poetry@^2
       - uses: pypa/gh-action-pypi-publish@release/v1
         if: ${{ steps.semanticrelease.outputs.new_release_published == 'true' }}
