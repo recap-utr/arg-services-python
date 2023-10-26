@@ -14,11 +14,11 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-grpcio = "^1.53.0"
-protobuf = "^4.22.1"
-grpcio-reflection = "^1.53.0"
-grpc-stubs = "^1.53.0.1"
+python = "^3.10"
+grpcio = "^1.53"
+protobuf = "^4.22"
+grpcio-reflection = "^1.53"
+grpc-stubs = "^1.53"
 
 [build-system]
 requires = ["poetry-core"]
