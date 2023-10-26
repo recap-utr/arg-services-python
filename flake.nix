@@ -21,7 +21,7 @@
         ...
       }: let
         poetry = pkgs.poetry;
-        python = pkgs.python310;
+        python = pkgs.python311;
         packages = with pkgs; [poetry python buf protobuf mypy-protobuf];
       in {
         packages = {
