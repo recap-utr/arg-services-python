@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/recap-utr/arg-services-python/compare/v1.4.2...v1.4.3) (2023-11-05)
+
+
+### Bug Fixes
+
+* bump arg-services to v1.4.3 ([53aa4b2](https://github.com/recap-utr/arg-services-python/commit/53aa4b2460fc357542eb902ea3f4b1c82b1be0f1))
+
 ## [1.4.2](https://github.com/recap-utr/arg-services-python/compare/v1.4.1...v1.4.2) (2023-10-26)
 
 
