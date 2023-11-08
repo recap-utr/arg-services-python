@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/recap-utr/arg-services-python/compare/v1.4.4...v1.5.0) (2023-11-08)
+
+
+### Features
+
+* allow passing options to grpc server ([43a058d](https://github.com/recap-utr/arg-services-python/commit/43a058d7b19f85118fe7bc2638ed036a1082308e))
+
 ## [1.4.4](https://github.com/recap-utr/arg-services-python/compare/v1.4.3...v1.4.4) (2023-11-05)
 
 
