@@ -164,6 +164,7 @@ def _serve_single(
     threads: int,
     reflection_services: t.Iterable[str],
     worker_id: int,
+    options: t.Optional[t.Mapping[str, t.Any]] = None,
 ):
     """Helper function to start a server for a single process.
 
@@ -173,7 +174,10 @@ def _serve_single(
         threads: Number of workers for the ThreadPoolExecutor.
         reflection_services: Name of all services this server offers.
     """
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=threads))
+    server = grpc.server(
+        futures.ThreadPoolExecutor(max_workers=threads),
+        options=list(options.items()) if options else None,
+    )
     add_services(server)
 
     if reflection_services:
@@ -194,6 +198,7 @@ def serve(
     add_services: t.Callable[[grpc.Server], None],
     reflection_services: t.Iterable[str],
     threads: int = 1,
+    options: t.Optional[t.Mapping[str, t.Any]] = None,
 ):
     """Serve one or multiple gRPC services, optionally using multiprocessing.
 
@@ -218,14 +223,21 @@ def serve(
     if len(urls) < 1:
         raise ValueError("No address given.")
     elif len(urls) == 1:
-        _serve_single(urls[0], add_services, threads, reflection_services, 1)
+        _serve_single(urls[0], add_services, threads, reflection_services, 1, options)
     else:
         workers = []
 
         for worker_id, url in enumerate(urls):
             worker = mp.Process(
                 target=_serve_single,
-                args=(url, add_services, threads, reflection_services, worker_id),
+                args=(
+                    url,
+                    add_services,
+                    threads,
+                    reflection_services,
+                    worker_id,
+                    options,
+                ),
             )
             worker.start()
             workers.append(worker)
