@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/recap-utr/arg-services-python/compare/v1.5.0...v1.6.0) (2023-11-13)
+
+
+### Features
+
+* make context optional for helper methods ([11bd739](https://github.com/recap-utr/arg-services-python/commit/11bd73901fda9612c06aa800890ad6b46c2c69c4))
+
 ## [1.5.0](https://github.com/recap-utr/arg-services-python/compare/v1.4.4...v1.5.0) (2023-11-08)
 
 
