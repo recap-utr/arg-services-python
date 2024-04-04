@@ -9,5 +9,5 @@ deps:
   - remote: buf.build
     owner: recap
     repository: arg-services
-    commit: e24e9fedaa004187b73e9cd345db297b
-    digest: shake256:1b95cddd693a1623684ffcb795342ea4432142869fcb272604d704f15ec66261c217ff67e4da4551f3116fabb9fb152b8ccd44eda8e0f654be269676f9912b1f
+    commit: 8347075ddfb14193bc0c60a39bcd830e
+    digest: shake256:82f5a3e40caade245bc9d6e68f6317f19cbbe82f906ef0bb3c15b637cad186d60348cab48ea119a4aa77559cdcc7a4f85018d76549aa3b3ecb4e3b5297c2cc20
