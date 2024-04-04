@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   branches: [
     { name: "main" },
     { name: "next" },
@@ -60,5 +60,3 @@ const config = {
     ],
   ],
 };
-
-module.exports = config;

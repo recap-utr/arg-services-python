@@ -10,15 +10,15 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@v8
-      - uses: DeterminateSystems/magic-nix-cache-action@v3
+      - uses: DeterminateSystems/nix-installer-action@v10
+      - uses: DeterminateSystems/magic-nix-cache-action@v4
       - run: nix profile install .#releaseEnv
       - uses: cycjimmy/semantic-release-action@v4
         id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          semantic_version: ^22
+          semantic_version: ^23
           extra_plugins: |
             @semantic-release/git@^10
             @semantic-release/changelog@^6
