@@ -17,6 +17,7 @@ jobs:
         id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
           semantic_version: ^23
           extra_plugins: |
