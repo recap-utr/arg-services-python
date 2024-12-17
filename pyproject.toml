@@ -15,10 +15,10 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-grpcio = "^1.53"
-protobuf = "^4.22"
-grpcio-reflection = "^1.53"
-grpc-stubs = "^1.53"
+grpcio = "^1"
+protobuf = "^4"
+grpcio-reflection = "^1"
+grpc-stubs = "^1"
 
 [build-system]
 requires = ["poetry-core"]

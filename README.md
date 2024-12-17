@@ -9,6 +9,6 @@ Along with the Protobuf files, the project also contains code for generating lib
 
 Documentation can be found at the [Buf Schema Registry](https://buf.build/recap/arg-services).
 
-# Build Locally
+## Build Locally
 
-`./generate.sh`
+`rm -rf ./src && nix run .#buf-generate`

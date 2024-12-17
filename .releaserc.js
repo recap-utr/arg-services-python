@@ -30,7 +30,7 @@ module.exports = {
       // Buf
       "@semantic-release/exec",
       {
-        prepareCmd: "nix run .#bufGenerate",
+        prepareCmd: "nix run .#buf-generate",
       },
     ],
     [
@@ -55,7 +55,7 @@ module.exports = {
       "@semantic-release/git",
       {
         message: "chore(release): ${nextRelease.version}",
-        assets: ["pyproject.toml", "*/__init__.py", "CHANGELOG.md", "buf.lock"],
+        assets: ["pyproject.toml", "*/__init__.py", "CHANGELOG.md"],
       },
     ],
   ],

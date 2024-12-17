@@ -1,15 +1,22 @@
-version: v1
+version: v2
 managed:
   enabled: true
+clean: true
+inputs:
+  - module: buf.build/recap/arg-services:v1.5.1
 plugins:
   # Python
-  - plugin: buf.build/protocolbuffers/python:v24.4
+  - remote: buf.build/protocolbuffers/python:v29.1
     out: ./src
-  - plugin: buf.build/grpc/python:v1.59.1
+    include_imports: true
+  - remote: buf.build/grpc/python:v1.68.2
     out: ./src
-  - name: mypy
-    # plugin: buf.build/community/nipunn1313-mypy:v3.4.0
+    include_imports: true
+  - local: protoc-gen-mypy
+    # remote: buf.build/community/nipunn1313-mypy:v3.4.0
     out: ./src
-  - name: mypy_grpc
-    # plugin: buf.build/community/nipunn1313-mypy-grpc:v3.4.0
+    include_imports: true
+  - local: protoc-gen-mypy_grpc
+    # remote: buf.build/community/nipunn1313-mypy-grpc:v3.4.0
     out: ./src
+    include_imports: true

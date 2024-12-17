@@ -6,8 +6,6 @@
   };
   outputs =
     inputs@{
-      self,
-      nixpkgs,
       flake-parts,
       systems,
       ...
@@ -18,33 +16,31 @@
         {
           pkgs,
           lib,
-          system,
-          self',
+          config,
           ...
         }:
         let
           poetry = pkgs.poetry;
-          python = pkgs.python311;
+          python = pkgs.python312;
           packages = [
             poetry
             python
+            config.packages.buf-generate
           ];
         in
         {
           packages = {
-            releaseEnv = pkgs.buildEnv {
+            release-env = pkgs.buildEnv {
               name = "release-env";
               paths = packages;
             };
-            bufGenerate = pkgs.writeShellApplication {
+            buf-generate = pkgs.writeShellApplication {
               name = "buf-generate";
               runtimeInputs = with pkgs; [ mypy-protobuf ];
               text = ''
-                ${lib.getExe pkgs.buf} mod update &&
-                ${lib.getExe pkgs.buf} generate --include-imports buf.build/recap/arg-services &&
-                find src -type d -exec touch {}/__init__.py \; &&
-                rm -f src/__init__.py &&
-                cp -rf arg_services/__init__.py src/arg_services/__init__.py
+                ${lib.getExe pkgs.buf} generate
+                find src/* -type d -exec touch {}/__init__.py \;
+                cp -f arg_services/__init__.py src/arg_services/__init__.py
               '';
             };
           };
