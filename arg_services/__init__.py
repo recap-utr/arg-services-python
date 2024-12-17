@@ -1,14 +1,15 @@
 import multiprocessing as mp
 import traceback
-import typing as t
+from collections.abc import Callable, Collection, Iterable, Mapping
 from concurrent import futures
 from operator import attrgetter
+from typing import Any
 
 import grpc
 from grpc_reflection.v1alpha import reflection
 
 
-def handle_except(ex: Exception, ctx: t.Optional[grpc.ServicerContext]) -> None:
+def handle_except(ex: Exception, ctx: grpc.ServicerContext | None) -> None:
     """Handler that can be called when handling an exception.
 
     It will pass the traceback to the gRPC client and abort the context.
@@ -27,9 +28,9 @@ def handle_except(ex: Exception, ctx: t.Optional[grpc.ServicerContext]) -> None:
 
 
 def require_any(
-    attrs: t.Collection[str],
-    obj: object,
-    ctx: t.Optional[grpc.ServicerContext],
+    attrs: Collection[str],
+    obj: Any,
+    ctx: grpc.ServicerContext | None = None,
     parent: str = "request",
 ) -> None:
     """Verify that any of the required arguments are supplied by the client.
@@ -58,9 +59,9 @@ def require_any(
 
 
 def require_all(
-    attrs: t.Collection[str],
-    obj: object,
-    ctx: t.Optional[grpc.ServicerContext] = None,
+    attrs: Collection[str],
+    obj: Any,
+    ctx: grpc.ServicerContext | None = None,
     parent: str = "request",
 ) -> None:
     """Verify that all required arguments are supplied by the client.
@@ -90,9 +91,9 @@ def require_all(
 
 def require_all_repeated(
     key: str,
-    attrs: t.Collection[str],
-    obj: object,
-    ctx: t.Optional[grpc.ServicerContext] = None,
+    attrs: Collection[str],
+    obj: Any,
+    ctx: grpc.ServicerContext | None = None,
 ) -> None:
     """Verify that all required arguments are supplied by the client.
 
@@ -112,9 +113,9 @@ def require_all_repeated(
 
 def require_any_repeated(
     key: str,
-    attrs: t.Collection[str],
-    obj: object,
-    ctx: t.Optional[grpc.ServicerContext] = None,
+    attrs: Collection[str],
+    obj: Any,
+    ctx: grpc.ServicerContext | None = None,
 ) -> None:
     """Verify that any required arguments are supplied by the client.
 
@@ -133,9 +134,9 @@ def require_any_repeated(
 
 
 def forbid_all(
-    attrs: t.Collection[str],
-    obj: object,
-    ctx: t.Optional[grpc.ServicerContext] = None,
+    attrs: Collection[str],
+    obj: Any,
+    ctx: grpc.ServicerContext | None = None,
     parent: str = "request",
 ) -> None:
     """Verify that no illegal combination of arguments is provided by the client.
@@ -167,12 +168,12 @@ def full_service_name(pkg, service: str) -> str:
 
 def _serve_single(
     address: str,
-    add_services: t.Callable[[grpc.Server], None],
+    add_services: Callable[[grpc.Server], None],
     threads: int,
-    reflection_services: t.Iterable[str],
+    reflection_services: Iterable[str],
     worker_id: int,
-    options: t.Optional[t.Mapping[str, t.Any]] = None,
-):
+    options: Mapping[str, Any] | None = None,
+) -> None:
     """Helper function to start a server for a single process.
 
     Args:
@@ -202,11 +203,11 @@ def _serve_single(
 
 def serve(
     address: str,
-    add_services: t.Callable[[grpc.Server], None],
-    reflection_services: t.Iterable[str],
+    add_services: Callable[[grpc.Server], None],
+    reflection_services: Iterable[str],
     threads: int = 1,
-    options: t.Optional[t.Mapping[str, t.Any]] = None,
-):
+    options: Mapping[str, Any] | None = None,
+) -> None:
     """Serve one or multiple gRPC services, optionally using multiprocessing.
 
     Args:
