@@ -36,7 +36,10 @@
             };
             buf-generate = pkgs.writeShellApplication {
               name = "buf-generate";
-              runtimeInputs = with pkgs; [ mypy-protobuf ];
+              runtimeInputs = with pkgs; [
+                protobuf
+                mypy-protobuf
+              ];
               text = ''
                 ${lib.getExe pkgs.buf} generate
                 find src/* -type d -exec touch {}/__init__.py \;

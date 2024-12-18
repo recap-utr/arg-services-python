@@ -5,18 +5,19 @@ clean: true
 inputs:
   - module: buf.build/recap/arg-services:v1.5.1
 plugins:
-  # Python
   - remote: buf.build/protocolbuffers/python:v29.1
     out: ./src
     include_imports: true
   - remote: buf.build/grpc/python:v1.68.2
     out: ./src
     include_imports: true
-  - local: protoc-gen-mypy
-    # remote: buf.build/community/nipunn1313-mypy:v3.4.0
+  - remote: buf.build/protocolbuffers/pyi:v29.1
     out: ./src
     include_imports: true
+  # not needed, pyi already does that
+  # - local: protoc-gen-mypy
+  #   out: ./src
+  #   include_imports: true
   - local: protoc-gen-mypy_grpc
-    # remote: buf.build/community/nipunn1313-mypy-grpc:v3.4.0
     out: ./src
     include_imports: true
