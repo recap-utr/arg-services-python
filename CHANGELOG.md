@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.4](https://github.com/recap-utr/arg-services-python/compare/v1.7.3...v1.7.4) (2024-12-18)
+
+
+### Bug Fixes
+
+* **deps:** bump arg-services to v1.5.2 ([5c5af10](https://github.com/recap-utr/arg-services-python/commit/5c5af100e812ca860f7ec9ea55aa905565f9a5fd))
+* use logging instead of print ([54741bb](https://github.com/recap-utr/arg-services-python/commit/54741bb89280c4c1656ed3b2cbfb64970858cc2d))
+
 ## [1.7.3](https://github.com/recap-utr/arg-services-python/compare/v1.7.2...v1.7.3) (2024-12-18)
 
 
