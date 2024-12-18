@@ -1,3 +1,4 @@
+import logging
 import multiprocessing as mp
 import traceback
 from collections.abc import Callable, Collection, Iterable, Mapping
@@ -7,6 +8,9 @@ from typing import Any
 
 import grpc
 from grpc_reflection.v1alpha import reflection
+
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
 
 
 def handle_except(ex: Exception, ctx: grpc.ServicerContext | None) -> None:
@@ -196,7 +200,7 @@ def _serve_single(
     server.add_insecure_port(address)
     server.start()
 
-    print(f"Worker {worker_id} serving on '{address}'.")
+    logger.info(f"Worker {worker_id} serving on '{address}'.")
 
     server.wait_for_termination()
 
@@ -250,8 +254,8 @@ def serve(
             worker.start()
             workers.append(worker)
 
-        print("Workers are starting, please connect to")
-        print(f"ipv4:{address}")
+        logger.info("Workers are starting, please connect to")
+        logger.info(f"ipv4:{address}")
 
         for worker in workers:
             worker.join()
