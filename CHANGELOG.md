@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.2](https://github.com/recap-utr/arg-services-python/compare/v1.7.1...v1.7.2) (2024-12-18)
+
+
+### Bug Fixes
+
+* update typing support ([aab1de9](https://github.com/recap-utr/arg-services-python/commit/aab1de9102c448edc4571fe0c0b6d503f73c5209))
+
 ## [1.7.1](https://github.com/recap-utr/arg-services-python/compare/v1.7.0...v1.7.1) (2024-04-09)
 
 
