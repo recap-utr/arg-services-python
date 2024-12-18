@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.3](https://github.com/recap-utr/arg-services-python/compare/v1.7.2...v1.7.3) (2024-12-18)
+
+
+### Bug Fixes
+
+* update protobuf to v5 ([24eb33b](https://github.com/recap-utr/arg-services-python/commit/24eb33b3d647ae585f7e4af54abd6d3102f79984))
+
 ## [1.7.2](https://github.com/recap-utr/arg-services-python/compare/v1.7.1...v1.7.2) (2024-12-18)
 
 
