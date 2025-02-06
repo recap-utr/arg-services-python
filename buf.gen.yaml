@@ -3,7 +3,7 @@ managed:
   enabled: true
 clean: true
 inputs:
-  - module: buf.build/recap/arg-services:v1.5.2
+  - module: buf.build/recap/arg-services:v1.5.3
 plugins:
   - remote: buf.build/protocolbuffers/python:v29.1
     out: ./src
