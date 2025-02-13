@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.7.6](https://github.com/recap-utr/arg-services-python/compare/v1.7.5...v1.7.6) (2025-02-13)
+
+### Bug Fixes
+
+* migrate from poetry to uv ([f9128c2](https://github.com/recap-utr/arg-services-python/commit/f9128c2ad81ffaffff8cd8ec50cc65b79c35d11e))
+
 ## [1.7.5](https://github.com/recap-utr/arg-services-python/compare/v1.7.4...v1.7.5) (2025-02-06)
 
 

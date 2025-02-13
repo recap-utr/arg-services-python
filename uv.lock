@@ -3,7 +3,7 @@ requires-python = ">=3.10"
 
 [[package]]
 name = "arg-services"
-version = "1.7.5"
+version = "1.7.6"
 source = { editable = "." }
 dependencies = [
     { name = "grpc-stubs" },
