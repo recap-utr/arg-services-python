@@ -20,10 +20,10 @@
           ...
         }:
         let
-          poetry = pkgs.poetry;
+          uv = pkgs.uv;
           python = pkgs.python312;
           packages = [
-            poetry
+            uv
             python
             config.packages.buf-generate
           ];
@@ -49,11 +49,10 @@
           };
           devShells.default = pkgs.mkShell {
             inherit packages;
-            POETRY_VIRTUALENVS_IN_PROJECT = true;
             LD_LIBRARY_PATH = lib.makeLibraryPath (with pkgs; [ stdenv.cc.cc ]);
+            UV_PYTHON = python;
             shellHook = ''
-              ${lib.getExe poetry} env use ${lib.getExe python}
-              ${lib.getExe poetry} install --all-extras --no-root
+              uv sync --all-extras --locked
             '';
           };
         };

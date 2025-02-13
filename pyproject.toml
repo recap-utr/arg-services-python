@@ -1,26 +1,18 @@
-[tool.poetry]
+[project]
 name = "arg-services"
 version = "1.7.5"
 description = "gRPC definitions for microservice-based argumentation machines"
-authors = ["Mirko Lenz <info@mirko-lenz.de>"]
-license = "MIT"
+authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
-homepage = "http://recap.uni-trier.de"
-repository = "https://github.com/recap-utr/arg-services-python"
-include = ["src/**/*"]
-packages = [
-    { include = "arg_services", from = "src" },
-    { include = "google/api", from = "src" },
+requires-python = ">=3.10"
+dependencies = [
+    "grpc-stubs>=1,<2",
+    "grpcio>=1,<2",
+    "grpcio-reflection>=1,<2",
+    "protobuf>=4,<6",
+    "types-protobuf>=4,<6",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-grpc-stubs = "^1"
-grpcio = "^1"
-grpcio-reflection = "^1"
-protobuf = "^5"
-types-protobuf = "^5"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
