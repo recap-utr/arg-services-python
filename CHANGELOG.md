@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.7.7](https://github.com/recap-utr/arg-services-python/compare/v1.7.6...v1.7.7) (2025-02-14)
+
+### Bug Fixes
+
+* **deps:** require protobuf v5 ([4957c34](https://github.com/recap-utr/arg-services-python/commit/4957c3445ca6a78e76492639b6a7fc4e867c7ff1))
+
 ## [1.7.6](https://github.com/recap-utr/arg-services-python/compare/v1.7.5...v1.7.6) (2025-02-13)
 
 ### Bug Fixes
