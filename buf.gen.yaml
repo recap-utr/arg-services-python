@@ -4,14 +4,15 @@ managed:
 clean: true
 inputs:
   - module: buf.build/recap/arg-services:v1.5.3
+# https://protobuf.dev/support/version-support/#python
 plugins:
-  - remote: buf.build/protocolbuffers/python:v29.1
+  - remote: buf.build/protocolbuffers/python:v29.3
     out: ./src
     include_imports: true
-  - remote: buf.build/grpc/python:v1.68.2
+  - remote: buf.build/grpc/python:v1.70.1
     out: ./src
     include_imports: true
-  - remote: buf.build/protocolbuffers/pyi:v29.1
+  - remote: buf.build/protocolbuffers/pyi:v29.3
     out: ./src
     include_imports: true
   # not needed, pyi already does that

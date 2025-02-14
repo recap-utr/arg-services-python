@@ -7,10 +7,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "grpc-stubs>=1,<2",
-    "grpcio>=1,<2",
     "grpcio-reflection>=1,<2",
-    "protobuf>=4,<6",
-    "types-protobuf>=4,<6",
+    "grpcio>=1,<2",
+    "protobuf>=5,<6",
+    "types-protobuf>=5,<6",
 ]
 
 [build-system]
