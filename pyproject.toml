@@ -9,7 +9,7 @@ dependencies = [
     "grpc-stubs>=1,<2",
     "grpcio-reflection>=1,<2",
     "grpcio>=1,<2",
-    "protobuf>=5,<6",
+    "protobuf>=6,<7",
     "types-protobuf>=5,<6",
 ]
 
