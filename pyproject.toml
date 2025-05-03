@@ -10,7 +10,7 @@ dependencies = [
     "grpcio-reflection>=1,<2",
     "grpcio>=1,<2",
     "protobuf>=5,<6",
-    "types-protobuf>=5,<6",
+    "types-protobuf>=6,<7",
 ]
 
 [build-system]
