@@ -1,6 +1,6 @@
 [project]
 name = "arg-services"
-version = "1.7.8"
+version = "1.7.9"
 description = "gRPC definitions for microservice-based argumentation machines"
 authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
