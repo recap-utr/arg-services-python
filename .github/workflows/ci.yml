@@ -11,7 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v17
-      - uses: DeterminateSystems/magic-nix-cache-action@v9
+      - uses: cachix/cachix-action@v16
+        with:
+          name: recap
+          authToken: ${{ secrets.CACHIX_TOKEN }}
       - run: nix profile install .#release-env
       - uses: cycjimmy/semantic-release-action@v4
         id: semanticrelease
