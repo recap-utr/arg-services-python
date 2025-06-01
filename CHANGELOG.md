@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.7.11](https://github.com/recap-utr/arg-services-python/compare/v1.7.10...v1.7.11) (2025-06-01)
+
+### Bug Fixes
+
+* **deps:** remove deprecated grpc-stubs ([cc15dd6](https://github.com/recap-utr/arg-services-python/commit/cc15dd6781177027061c417e33705c3b7925ba0d))
+
 ## [1.7.10](https://github.com/recap-utr/arg-services-python/compare/v1.7.9...v1.7.10) (2025-06-01)
 
 ### Bug Fixes
