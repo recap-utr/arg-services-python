@@ -3,7 +3,7 @@ managed:
   enabled: true
 clean: true
 inputs:
-  - module: buf.build/recap/arg-services:v1.5.5
+  - module: buf.build/recap/arg-services:v1.5.6
 # https://protobuf.dev/support/version-support/#python
 plugins:
   - remote: buf.build/protocolbuffers/python:v29.3
