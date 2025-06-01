@@ -6,7 +6,6 @@ authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "grpc-stubs>=1,<2",
     "grpcio-reflection>=1,<2",
     "grpcio>=1,<2",
     "protobuf>=5,<6",
