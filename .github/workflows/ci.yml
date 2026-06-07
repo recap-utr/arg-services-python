@@ -16,7 +16,7 @@ jobs:
           name: recap
           authToken: ${{ secrets.CACHIX_TOKEN }}
       - run: nix profile install .#release-env
-      - uses: cycjimmy/semantic-release-action@v4
+      - uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
         id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
