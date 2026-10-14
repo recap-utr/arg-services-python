@@ -15,3 +15,6 @@ plugins:
     out: src
   - remote: buf.build/community/nipunn1313-mypy-grpc:v5.1.0
     out: src
+  - remote: buf.build/connectrpc/py:v0.12.1
+    out: src
+    opt: protobuf=google
