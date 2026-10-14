@@ -1,18 +1,22 @@
 [project]
 name = "arg-services"
 version = "1.7.11"
-description = "gRPC definitions for microservice-based argumentation machines"
+description = "Protobuf and gRPC definitions for microservice-based argumentation machines"
 authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
 requires-python = ">=3.12"
 # lower bounds match the gencode versions in buf.gen.yaml
 dependencies = [
     "googleapis-common-protos>=1,<2",
+    "protobuf>=7.34,<8",
+    "types-protobuf>=7,<8",
+]
+
+[project.optional-dependencies]
+grpcio = [
     "grpcio-reflection>=1.82,<2",
     "grpcio>=1.82,<2",
-    "protobuf>=7.34,<8",
     "types-grpcio>=1,<2",
-    "types-protobuf>=7,<8",
 ]
 
 [build-system]

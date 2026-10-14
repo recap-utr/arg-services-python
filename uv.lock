@@ -12,22 +12,27 @@ version = "1.7.11"
 source = { editable = "." }
 dependencies = [
     { name = "googleapis-common-protos" },
+    { name = "protobuf" },
+    { name = "types-protobuf" },
+]
+
+[package.optional-dependencies]
+grpcio = [
     { name = "grpcio" },
     { name = "grpcio-reflection" },
-    { name = "protobuf" },
     { name = "types-grpcio" },
-    { name = "types-protobuf" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "googleapis-common-protos", specifier = ">=1,<2" },
-    { name = "grpcio", specifier = ">=1.82,<2" },
-    { name = "grpcio-reflection", specifier = ">=1.82,<2" },
+    { name = "grpcio", marker = "extra == 'grpcio'", specifier = ">=1.82,<2" },
+    { name = "grpcio-reflection", marker = "extra == 'grpcio'", specifier = ">=1.82,<2" },
     { name = "protobuf", specifier = ">=7.34,<8" },
-    { name = "types-grpcio", specifier = ">=1,<2" },
+    { name = "types-grpcio", marker = "extra == 'grpcio'", specifier = ">=1,<2" },
     { name = "types-protobuf", specifier = ">=7,<8" },
 ]
+provides-extras = ["grpcio"]
 
 [[package]]
 name = "googleapis-common-protos"
