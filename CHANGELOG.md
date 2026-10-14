@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/recap-utr/arg-services-python/compare/v1.7.11...v2.0.0) (2026-10-14)
+
+### ⚠ BREAKING CHANGES
+
+* make grpcio optional and add runtime-neutral validation
+
+### Features
+
+* add async grpc server ([9a4bfa3](https://github.com/recap-utr/arg-services-python/commit/9a4bfa3439f899302eaeacf214fd1507a3fa1cee))
+* add connect stubs and helpers via connectrpc extra ([4a30378](https://github.com/recap-utr/arg-services-python/commit/4a30378c88ac849521b20946caec10ed5d4ddbb3))
+* make grpcio optional and add runtime-neutral validation ([819ebdf](https://github.com/recap-utr/arg-services-python/commit/819ebdf37a96c93e99dab6c41f9bb074405cca1c))
+* mark package as typed ([f45a1e5](https://github.com/recap-utr/arg-services-python/commit/f45a1e56507c8aeb24a944b450cc2be00382d39f))
+
+### Bug Fixes
+
+* **deps:** require python 3.12 ([fb177b7](https://github.com/recap-utr/arg-services-python/commit/fb177b735ee6940fe9cf7dfe983d7ab07fc8ac6e))
+* **deps:** update protobuf to 7 and grpcio to 1.82 ([a5be280](https://github.com/recap-utr/arg-services-python/commit/a5be280a5c9a5d86f216da8f197448bd39a859a7))
+
 ## [1.7.11](https://github.com/recap-utr/arg-services-python/compare/v1.7.10...v1.7.11) (2025-06-01)
 
 ### Bug Fixes
