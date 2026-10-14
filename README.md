@@ -28,6 +28,7 @@ Install the extra for the RPC runtime you want to use, both share the same messa
 `arg_services.validation` checks requests independently of the runtime and raises a `ValidationError`.
 Add the `ValidationInterceptor` of your runtime to report it as `INVALID_ARGUMENT`, e.g., `serve(..., interceptors=[ValidationInterceptor()])`.
 To pass the traceback of unhandled exceptions to gRPC clients, also add `arg_services.grpcio.ExceptionInterceptor()`.
+For asyncio servicers, use `arg_services.grpcio.serve_async` with `AsyncValidationInterceptor()` and `AsyncExceptionInterceptor()` instead.
 
 ```python
 from arg_services.validation import require_all
