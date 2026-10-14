@@ -19,7 +19,7 @@
           ...
         }:
         let
-          python = pkgs.python312;
+          python = pkgs.python3;
           packages = [
             pkgs.uv
             pkgs.buf

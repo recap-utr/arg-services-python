@@ -4,7 +4,7 @@ version = "1.7.11"
 description = "gRPC definitions for microservice-based argumentation machines"
 authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 # lower bounds match the gencode versions in buf.gen.yaml
 dependencies = [
     "googleapis-common-protos>=1,<2",
