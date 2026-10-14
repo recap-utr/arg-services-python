@@ -5,13 +5,20 @@ description = "gRPC definitions for microservice-based argumentation machines"
 authors = [{ name = "Mirko Lenz", email = "mirko@mirkolenz.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
+# lower bounds match the gencode versions in buf.gen.yaml
 dependencies = [
-    "grpcio-reflection>=1,<2",
-    "grpcio>=1,<2",
-    "protobuf>=5,<6",
-    "types-protobuf>=5,<6",
+    "googleapis-common-protos>=1,<2",
+    "grpcio-reflection>=1.82,<2",
+    "grpcio>=1.82,<2",
+    "protobuf>=7.34,<8",
+    "types-grpcio>=1,<2",
+    "types-protobuf>=7,<8",
 ]
 
 [build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.12,<1"]
+build-backend = "uv_build"
+
+[tool.basedpyright]
+# generated code, matches .gitignore
+exclude = ["src/arg_services/*/"]

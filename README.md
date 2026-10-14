@@ -11,4 +11,4 @@ Documentation can be found at the [Buf Schema Registry](https://buf.build/recap/
 
 ## Build Locally
 
-`rm -rf ./src && nix run .#buf-generate`
+`buf generate && uv build`

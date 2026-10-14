@@ -30,7 +30,7 @@ export default {
       // Buf
       "@semantic-release/exec",
       {
-        prepareCmd: "nix run .#buf-generate",
+        prepareCmd: "buf generate",
       },
     ],
     [
@@ -55,7 +55,7 @@ export default {
       "@semantic-release/git",
       {
         message: "chore(release): ${nextRelease.version}",
-        assets: ["pyproject.toml", "uv.lock", "*/__init__.py", "CHANGELOG.md"],
+        assets: ["pyproject.toml", "uv.lock", "CHANGELOG.md"],
       },
     ],
   ],

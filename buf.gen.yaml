@@ -1,24 +1,17 @@
 version: v2
 managed:
   enabled: true
-clean: true
 inputs:
   - module: buf.build/recap/arg-services:v1.5.6
-# https://protobuf.dev/support/version-support/#python
+# oldest protobuf 7 and grpcio releases to avoid conflicts with other packages (e.g., tensorflow),
+# newer runtimes accept older gencode: https://protobuf.dev/support/cross-version-runtime-guarantee
+# keep in sync with the lower bounds of the dependencies in pyproject.toml
 plugins:
-  - remote: buf.build/protocolbuffers/python:v29.3
-    out: ./src
-    include_imports: true
-  - remote: buf.build/grpc/python:v1.70.1
-    out: ./src
-    include_imports: true
-  - remote: buf.build/protocolbuffers/pyi:v29.3
-    out: ./src
-    include_imports: true
-  # not needed, pyi already does that
-  # - local: protoc-gen-mypy
-  #   out: ./src
-  #   include_imports: true
-  - local: protoc-gen-mypy_grpc
-    out: ./src
-    include_imports: true
+  - remote: buf.build/protocolbuffers/python:v34.0
+    out: src
+  - remote: buf.build/grpc/python:v1.82.0
+    out: src
+  - remote: buf.build/community/nipunn1313-mypy:v5.1.0
+    out: src
+  - remote: buf.build/community/nipunn1313-mypy-grpc:v5.1.0
+    out: src
