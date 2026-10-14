@@ -16,18 +16,18 @@ jobs:
           name: recap
           authToken: ${{ secrets.CACHIX_TOKEN }}
       - run: nix profile install .#release-env
-      - uses: cycjimmy/semantic-release-action@b12c8f6015dc215fe37bc154d4ad456dd3833c90 # v6.0.0
+      - uses: cycjimmy/semantic-release-action@9e1f8a3ef91f1097285028e799a5fb8bb90e8899 # v8
         id: semanticrelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         with:
-          semantic_version: ^24
+          semantic_version: ^25
           extra_plugins: |
-            @semantic-release/git@^10
-            @semantic-release/changelog@^6
+            @semantic-release/git@^11
+            @semantic-release/changelog@^7
             @semantic-release/exec@^7
-            conventional-changelog-conventionalcommits@^8
+            conventional-changelog-conventionalcommits@^10
             @cihelper/semanticrelease-plugin-uv@^1
       - uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # release/v1
         if: ${{ steps.semanticrelease.outputs.new_release_published == 'true' }}
