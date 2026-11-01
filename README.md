@@ -1,12 +1,6 @@
-# Argumentation Microservices
+# Argumentation Microservices for Python
 
-This project contains Protobuf definitions for building complex argumentation machines.
-The idea is to facilitate a microservice-oriented architecture where individual parts can be swapped out easily.
-Along with the Protobuf files, the project also contains code for generating libraries for multiple programming languages that are released as packages in their respective registries:
-
-- [Python](https://pypi.org/project/arg-services/)
-- [TypeScript](https://www.npmjs.com/package/arg-services)
-
+Generated [protobuf](https://protobuf.dev/reference/python/python-generated/), gRPC, and Connect code of the [arg-services](https://github.com/recap-utr/arg-services) Protobuf definitions for building complex argumentation machines.
 Documentation can be found at the [Buf Schema Registry](https://buf.build/recap/arg-services).
 
 ## Build Locally
