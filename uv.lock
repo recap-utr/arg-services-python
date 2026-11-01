@@ -30,17 +30,17 @@ grpcio = [
 
 [package.metadata]
 requires-dist = [
-    { name = "connectrpc", marker = "extra == 'connectrpc'", specifier = ">=0.13,<0.14" },
-    { name = "connectrpc-grpcreflect", marker = "extra == 'connectrpc'", specifier = ">=0.2,<0.3" },
+    { name = "connectrpc", marker = "extra == 'connectrpc'", specifier = ">=0.13,<1" },
+    { name = "connectrpc-grpcreflect", marker = "extra == 'connectrpc'", specifier = ">=0.2,<1" },
     { name = "googleapis-common-protos", specifier = ">=1,<2" },
     { name = "grpcio", marker = "extra == 'grpcio'", specifier = ">=1.82,<2" },
     { name = "grpcio-reflection", marker = "extra == 'grpcio'", specifier = ">=1.82,<2" },
     { name = "protobuf", specifier = ">=7.34,<8" },
-    { name = "protobuf-py", marker = "extra == 'connectrpc'", specifier = ">=0.7,<0.8" },
+    { name = "protobuf-py", marker = "extra == 'connectrpc'", specifier = ">=0.7,<1" },
     { name = "types-grpcio", marker = "extra == 'grpcio'", specifier = ">=1,<2" },
     { name = "types-protobuf", specifier = ">=7,<8" },
 ]
-provides-extras = ["grpcio", "connectrpc"]
+provides-extras = ["connectrpc", "grpcio"]
 
 [[package]]
 name = "connectrpc"
