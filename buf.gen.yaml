@@ -2,7 +2,7 @@ version: v2
 managed:
   enabled: true
 inputs:
-  - module: buf.build/recap/arg-services:v1.5.6
+  - module: buf.build/recap/arg-services:v1.6.0
 # oldest protobuf 7 and grpcio releases to avoid conflicts with other packages (e.g., tensorflow),
 # newer runtimes accept older gencode: https://protobuf.dev/support/cross-version-runtime-guarantee
 # keep in sync with the lower bounds of the dependencies in pyproject.toml
